@@ -10,22 +10,21 @@ function M.update(dt)
 	for _, message in ipairs(data.get_messages()) do
 		display_buffer.write_line(message, 1)
 	end
-	display_buffer.write_line("SCORE: "..data.get_score(), 1)
 	display_buffer.write_line(" ", 1)
 	display_buffer.write("1)", 2)
-	display_buffer.write_line("CONTINUE", 1)
-	display_buffer.write("0)", 2)
-	display_buffer.write_line("QUIT", 1)
-	return states.IN_PLAY
+	display_buffer.write_line("DENOUNCE AS LIZZID PERSON", 1)
+	display_buffer.write("2)", 2)
+	display_buffer.write_line("ACCEPT AS HUMAN", 1)
+	return states.CHOOSE
 end
 
 function M.handle_command(command)
-	if command == commands.ZERO then
-		return states.CONFIRM_QUIT
+	if command == commands.TWO then
+		return data.accept()
 	elseif command == commands.ONE then
-		return data.continue_game()
+		return data.denounce()
 	end
-	return states.IN_PLAY
+	return states.CHOOSE
 end
 
 return M
