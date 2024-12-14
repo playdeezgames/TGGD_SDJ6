@@ -57,8 +57,8 @@ function M.accept()
 	M.clear_messages()
 	M.add_message("YOU ACCEPT THEM AS HUMAN.")
 	if M.get_lizzid() then
-		M.add_message("YOU COULD NOT HAVE BEEN MORE WRONG!")
-		M.add_message("MOMENTS LATER, YOU ARE TORN LIMB FROM LIMB BY LIZZID PEOPLE AND YER FLESH IS CONSUMED RAW!")
+		M.add_message("YOU COULD NOT HAVE BEEN MORE    WRONG!")
+		M.add_message("MOMENTS LATER, YOU ARE TORN LIMBFROM LIMB BY LIZZID PEOPLE AND  YER FLESH IS CONSUMED RAW!")
 		return states.DEAD
 	else
 		M.set_score(M.get_score()+1)
@@ -70,15 +70,15 @@ end
 
 function M.denounce()
 	M.clear_messages()
-	M.add_message("YOU DENOUNCE THEM AS A LIZZID PERSON.")
+	M.add_message("YOU DENOUNCE THEM AS A LIZZID   PERSON.")
 	if M.get_lizzid() then
 		M.set_score(M.get_score()+1)
 		M.add_message("AND THEY WERE, WHEW!")
 		M.add_message("YER STILL ALIVE!")
 		return states.IN_PLAY
 	else
-		M.add_message("YOU COULD NOT HAVE BEEN MORE WRONG!")
-		M.add_message("MOMENTS LATER, YOU ARE TORN LIMB FROM LIMB BY HUMANS FOR YER FALSE ACCUSATION!")
+		M.add_message("YOU COULD NOT HAVE BEEN MORE    WRONG!")
+		M.add_message("MOMENTS LATER, YOU ARE TORN LIMBFROM LIMB BY HUMANS FOR YER     FALSE ACCUSATION!")
 		return states.DEAD
 	end
 end
